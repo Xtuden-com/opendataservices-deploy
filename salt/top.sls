@@ -26,7 +26,8 @@ base:
   'mon*':
     - icinga2-master
     - piwik
-    #- logserver
+    - influxdb
+    - logserver
 
   'dev2':
     - dev2

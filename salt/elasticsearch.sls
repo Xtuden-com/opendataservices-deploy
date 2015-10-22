@@ -23,5 +23,5 @@ elasticsearch-base:
   file.append:
     - name: /etc/elasticsearch/elasticsearch.yml
     - text: |
-      network.host: 127.0.0.1
-      discovery.zen.ping.multicast.enabled: false
+        network.host: 127.0.0.1
+        discovery.zen.ping.multicast.enabled: false

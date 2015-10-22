@@ -8,7 +8,7 @@ include:
 logserver-base:
   pkgrepo.managed:
     - humanname: Logstash
-    - name: deb http://packages.elasticsearch.org/logstash/1.4/debian stable main
+    - name: deb http://packages.elasticsearch.org/logstash/1.5/debian stable main
     - file: /etc/apt/sources.list.d/logstash.list
 
   pkg.installed:
@@ -21,3 +21,9 @@ logserver-base:
     - enable: True
 
 #cluster.name: elasticsearch
+
+
+# /etc/logstash/conf.d
+# /etc/default/logstash
+# usermod -a -G adm logstash
+

@@ -83,3 +83,31 @@ create_swapfile:
   mount.swap:
     - require:
       - cmd: create_swapfile
+#
+#
+## Monitoring
+#
+#python-pip:
+#  pkg.installed
+#
+#python-dev:
+#  pkg.installed
+#
+#glances:
+#  pip.installed:
+#    - require:
+#      - pkg: python-pip
+#      - pkg: python-dev
+#
+#psutil:
+#  pip.installed:
+#    - require:
+#      - pkg: python-pip
+#      - pkg: python-dev
+#
+#python-influxdb:
+#  pip.installed:
+#    - name: influxdb
+#    - require:
+#      - pkg: python-pip
+#      - pkg: python-dev
