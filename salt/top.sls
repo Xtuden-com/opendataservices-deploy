@@ -23,6 +23,10 @@ base:
     - cove
     - icinga2-satellite
 
+  'cove-big':
+    - cove
+    - icinga2-satellite
+
   'g-live*':
     - grantnav
     - icinga2-satellite

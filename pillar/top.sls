@@ -10,6 +10,9 @@ base:
      - private.live_pillar
   '*live-ocds*':
      - ocds_live_pillar
+  'cove-big':
+     - live_pillar
+     - private.live_pillar
   '*staging*':
      - staging_pillar
      - private.staging_pillar
