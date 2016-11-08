@@ -29,6 +29,15 @@ cove-deps:
         - service: apache2
         - service: uwsgi
 
+rpaf:
+  pkg.installed:
+    - name: libapache2-mod-rpaf
+  apache_module.enable:
+    - watch_in:
+      - service: apache2
+    - require:
+      - pkg: rpaf
+
 set_lc_all:
   file.append:
     - text: 'LC_ALL="en_GB.UTF-8"'
