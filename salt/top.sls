@@ -36,6 +36,10 @@ base:
     - org-ids
     - icinga2-satellite
 
+  'threesixtygiving-data':
+    - registry360
+    - icinga2-satellite
+
   # STAGING
 
   'cove-staging':
