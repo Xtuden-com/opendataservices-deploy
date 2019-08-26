@@ -33,6 +33,17 @@ extract_prometheus_client:
 
 ########### Service
 
+/home/{{ user }}/run.sh:
+  file.managed:
+    - source: salt://prometheus-client/run.sh
+    - template: jinja
+    - mode: 700
+    - user: {{ user }}
+    - context:
+        user: {{ user }}
+    - requires:
+      - user: {{ user }}_user_exists
+
 /etc/systemd/system/prometheus-node-exporter.service:
   file.managed:
     - source: salt://prometheus-client/prometheus-node-exporter.service
@@ -47,6 +58,7 @@ prometheus-node-exporter:
     - enable: True
     - requires:
       - file: /etc/systemd/system/prometheus-node-exporter.service
+      - file: /home/{{ user }}/run.sh
       - cmd: extract_prometheus_client
     # Make sure service restarts if any config changes
     - watch:
