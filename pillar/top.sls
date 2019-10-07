@@ -29,6 +29,11 @@ base:
      - 360_pillar
   '*360-live':
      - 360_live_pillar
+
+  'datastore-360-live':
+     - 360_datastore_live_pillar
+     - private.360_datastore_live_pillar
+
   'cove-live':
      - old_cove_live_pillar
 
