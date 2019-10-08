@@ -23,6 +23,7 @@ include:
   file.append:
     - text: |
         cluster.name: {{ grains.host }}
+        search.max_buckets: 1000000
     - require:
       - pkg: elasticsearch-base
 
