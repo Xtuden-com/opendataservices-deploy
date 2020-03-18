@@ -25,4 +25,5 @@ jobs:
         - "pip install -r requirements_dev.txt"
         - "wget https://chromedriver.storage.googleapis.com/2.36/chromedriver_linux64.zip; unzip chromedriver_linux64.zip -d chromedriver; export PATH=$PATH:`pwd`/chromedriver"
       script:
+        - "CUSTOM_SERVER_URL=http://standard.open-contracting.org/ DJANGO_SETTINGS_MODULE=cove_project.settings py.test -k test_url_input[tenders_releases_2_releases.json-expected_text0-not_expected_text0-True] cove_ocds/tests_functional.py"
         - "CUSTOM_SERVER_URL=http://standard.open-contracting.org/ DJANGO_SETTINGS_MODULE=cove_project.settings py.test cove_ocds/tests_functional.py"
